@@ -1,0 +1,72 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/container"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content">
+
+    <com.google.android.material.card.MaterialCardView
+        android:id="@+id/bubble"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="@dimen/margin"
+        android:layout_marginEnd="@dimen/margin"
+        android:elevation="1dp"
+        android:minHeight="70dp"
+        android:visibility="invisible"
+        app:cardBackgroundColor="@color/gray"
+        app:cardPreventCornerOverlap="false"
+        app:cardUseCompatPadding="true"
+        app:layout_constraintBottom_toBottomOf="@id/ivAvatar"
+        app:layout_constraintEnd_toStartOf="@id/ivAvatar"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="@id/ivAvatar"
+        app:shapeAppearanceOverlay="@style/initial_message_bot"
+        tools:visibility="visible">
+
+        <TextView
+            android:id="@+id/tvInitialMessage"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_gravity="center"
+            android:ellipsize="end"
+            android:maxLines="4"
+            android:minLines="2"
+            android:paddingHorizontal="@dimen/padding_text_bubble_initial_view"
+            android:paddingVertical="@dimen/margin"
+            android:textAppearance="@style/TextAppearance.AppCompat.Body1"
+            android:textColor="@color/black"
+            tools:text="¡Hola! Soy OneMillionBot, tu asistente virtual. ¿En qué te puedo ayudar?" />
+    </com.google.android.material.card.MaterialCardView>
+
+    <ImageView
+        android:id="@+id/ivAvatar"
+        android:layout_width="80dp"
+        android:layout_height="80dp"
+        android:layout_marginTop="10dp"
+        android:layout_marginEnd="@dimen/margin"
+        android:background="@drawable/circle"
+        android:elevation="1dp"
+        android:visibility="invisible"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        tools:visibility="visible" />
+
+    <ImageView
+        android:id="@+id/ivClose"
+        android:layout_width="23dp"
+        android:layout_height="23dp"
+        android:layout_marginEnd="@dimen/margin"
+        android:background="@drawable/circle"
+        android:backgroundTint="@color/gray"
+        android:elevation="2dp"
+        android:padding="5dp"
+        android:src="@drawable/ic_close"
+        android:tint="@color/black"
+        android:visibility="invisible"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        tools:visibility="visible" />
+
+</androidx.constraintlayout.widget.ConstraintLayout>

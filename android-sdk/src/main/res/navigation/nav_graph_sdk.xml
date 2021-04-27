@@ -1,0 +1,39 @@
+<?xml version="1.0" encoding="utf-8"?>
+<navigation xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/nav_graph"
+    tools:ignore="UnusedNavigation">
+
+    <action
+        android:id="@+id/actionCardCollectionFragment"
+        app:destination="@id/cardCollectionFragment" />
+
+    <action
+        android:id="@+id/actionChatFragment"
+        app:destination="@id/chatFragment" />
+
+    <action
+        android:id="@+id/actionLegalTermsFragment"
+        app:destination="@id/legalTermsFragment" />
+
+    <fragment
+        android:id="@+id/legalTermsFragment"
+        android:name="com.onemillionbot.sdk.presentation.legalterms.LegalTermsFragment"
+        tools:layout="@layout/legal_terms_fragment" />
+
+    <fragment
+        android:id="@+id/chatFragment"
+        android:name="com.onemillionbot.sdk.presentation.chat.ChatFragment"
+        tools:layout="@layout/chat_fragment" />
+
+    <dialog
+        android:id="@+id/cardCollectionFragment"
+        android:name="com.onemillionbot.sdk.presentation.chat.cardcollection.CardCollectionFragment"
+        tools:layout="@layout/card_collection_fragment">
+
+        <argument
+            android:name="cardCollection"
+            app:argType="com.onemillionbot.sdk.entities.Message$Bot$CardCollection" />
+    </dialog>
+</navigation>

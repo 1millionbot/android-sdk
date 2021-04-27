@@ -1,0 +1,3 @@
+include ':client'
+include ':android-sdk'
+rootProject.name = "1MillionBot"

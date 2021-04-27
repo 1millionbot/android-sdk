@@ -1,0 +1,95 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/messageBotContainer"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content">
+
+    <com.google.android.material.card.MaterialCardView
+        android:id="@+id/bubble"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:elevation="5dp"
+        app:cardUseCompatPadding="true"
+        app:cardPreventCornerOverlap="false"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toStartOf="@id/ivMoreCards"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintWidth_default="percent"
+        app:layout_constraintWidth_percent=".75"
+        app:shapeAppearanceOverlay="@style/message">
+
+        <androidx.constraintlayout.widget.ConstraintLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content">
+
+            <ImageView
+                android:id="@+id/ivImage"
+                android:layout_width="match_parent"
+                android:layout_height="200dp"
+                android:scaleType="centerCrop"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toTopOf="parent" />
+
+            <TextView
+                android:id="@+id/tvTittle"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="@dimen/margin"
+                android:paddingHorizontal="@dimen/margin_large"
+                android:textAppearance="@style/TextAppearance.AppCompat.Title"
+                app:layout_constraintEnd_toEndOf="@id/ivImage"
+                app:layout_constraintStart_toStartOf="@id/ivImage"
+                app:layout_constraintTop_toBottomOf="@id/ivImage" />
+
+            <TextView
+                android:id="@+id/tvSubTittle"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="@dimen/margin"
+                android:paddingHorizontal="@dimen/margin_large"
+                android:textAppearance="@style/TextAppearance.AppCompat.Body1"
+                app:layout_constraintEnd_toEndOf="@id/ivImage"
+                app:layout_constraintStart_toStartOf="@id/ivImage"
+                app:layout_constraintTop_toBottomOf="@id/tvTittle" />
+
+            <View
+                android:id="@+id/vSeparator"
+                android:layout_width="0dp"
+                android:layout_height="1dp"
+                android:layout_marginTop="@dimen/margin_semi_large"
+                android:background="@drawable/divider_list"
+                app:layout_constraintEnd_toEndOf="@id/ivImage"
+                app:layout_constraintStart_toStartOf="@id/ivImage"
+                app:layout_constraintTop_toBottomOf="@id/tvSubTittle" />
+
+            <androidx.recyclerview.widget.RecyclerView
+                android:id="@+id/rvButtons"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                app:layout_constraintEnd_toEndOf="@id/ivImage"
+                app:layout_constraintStart_toStartOf="@id/ivImage"
+                app:layout_constraintTop_toBottomOf="@id/vSeparator"
+                tools:listitem="@layout/button_message" />
+        </androidx.constraintlayout.widget.ConstraintLayout>
+
+    </com.google.android.material.card.MaterialCardView>
+
+    <ImageView
+        android:id="@+id/ivMoreCards"
+        android:layout_width="40dp"
+        android:layout_height="40dp"
+        android:layout_marginStart="@dimen/margin"
+        android:background="@drawable/circle"
+        android:elevation="1dp"
+        android:padding="10dp"
+        android:src="@drawable/ic_more_cards"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintStart_toEndOf="@id/bubble"
+        app:layout_constraintTop_toTopOf="parent"
+        tools:tint="@color/red" />
+
+</androidx.constraintlayout.widget.ConstraintLayout>

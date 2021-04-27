@@ -1,0 +1,201 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:animateLayoutChanges="true">
+
+    <ProgressBar
+        android:id="@+id/pBLoading"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="@dimen/margin"
+        android:indeterminate="true"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
+
+    <ImageView
+        android:id="@+id/ivBackground"
+        android:layout_width="0dp"
+        android:layout_height="0dp"
+        android:scaleType="centerCrop"
+        app:layout_constraintBottom_toTopOf="@id/root_bottom_bar"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        android:src="@drawable/chat_background" />
+
+    <androidx.coordinatorlayout.widget.CoordinatorLayout
+        android:layout_width="match_parent"
+        android:layout_height="0dp"
+        app:layout_constraintBottom_toTopOf="@id/root_bottom_bar"
+        app:layout_constraintTop_toTopOf="parent">
+
+        <androidx.recyclerview.widget.RecyclerView
+            android:id="@+id/rvMessages"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:layout_marginHorizontal="@dimen/margin"
+            android:clipToPadding="false" />
+
+        <com.google.android.material.floatingactionbutton.FloatingActionButton
+            android:id="@+id/fab"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_margin="@dimen/margin"
+            android:src="@drawable/ic_arrow_down"
+            android:visibility="invisible"
+            app:fabSize="mini"
+            app:layout_anchor="@id/rvMessages"
+            app:layout_anchorGravity="bottom|right|end"
+            app:layout_behavior="@string/hide_bottom_view_on_scroll_behavior" />
+
+    </androidx.coordinatorlayout.widget.CoordinatorLayout>
+
+
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:id="@+id/root_bottom_bar"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:background="@drawable/dummy_bg"
+        android:elevation="10dp"
+        app:layout_constraintBottom_toBottomOf="parent">
+
+        <androidx.recyclerview.widget.RecyclerView
+            android:id="@+id/rvButtons"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:background="@color/white"
+            android:paddingTop="@dimen/margin"
+            android:visibility="gone"
+            app:layout_constraintBottom_toTopOf="@id/etNewMessage" />
+
+        <ImageView
+            android:id="@+id/rvButtonsNext"
+            android:layout_width="0dp"
+            android:layout_height="0dp"
+            android:background="@color/white_translucent"
+            android:scaleType="centerInside"
+            android:src="@drawable/ic_arrow_right"
+            app:layout_constraintBottom_toBottomOf="@id/rvButtons"
+            app:layout_constraintDimensionRatio="1:1"
+            app:layout_constraintEnd_toEndOf="@id/rvButtons"
+            app:layout_constraintTop_toTopOf="@id/rvButtons" />
+
+        <EditText
+            android:id="@+id/etNewMessage"
+            android:layout_width="0dp"
+            android:layout_height="0dp"
+            android:background="@color/white"
+            android:gravity="center_vertical"
+            android:hint="@string/ask_question"
+            android:paddingVertical="@dimen/margin_large"
+            android:paddingStart="@dimen/margin_large"
+            android:singleLine="true"
+            app:layout_constraintBottom_toBottomOf="@id/btSend"
+            app:layout_constraintEnd_toStartOf="@id/btSend"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="@id/btSend" />
+
+        <androidx.appcompat.widget.AppCompatImageButton
+            android:id="@+id/btSend"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:background="@drawable/ic_background_send_button"
+            android:elevation="2dp"
+            android:padding="13dp"
+            android:paddingStart="30dp"
+            android:src="@drawable/ic_mic"
+            app:layout_constraintBottom_toTopOf="@id/tvOneMillionBot"
+            app:layout_constraintEnd_toEndOf="parent" />
+
+        <TextView
+            android:id="@+id/tvOneMillionBot"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:background="@color/white"
+            android:gravity="center"
+            android:padding="@dimen/margin"
+            android:text="@string/by_one_million_bot"
+            android:textAllCaps="true"
+            android:textColor="@color/gray_darker"
+            android:textSize="12sp"
+            app:layout_constraintBottom_toBottomOf="parent" />
+
+        <com.google.android.material.card.MaterialCardView
+            android:id="@+id/containerIv"
+            android:layout_width="40dp"
+            android:layout_height="40dp"
+            android:layout_marginStart="@dimen/margin_large"
+            app:layout_constraintBottom_toBottomOf="@id/btSendSpeech"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="@id/btSendSpeech"
+            app:shapeAppearanceOverlay="@style/message">
+
+            <ImageView
+                android:id="@+id/ivBin"
+                android:layout_width="40dp"
+                android:layout_height="40dp"
+                android:elevation="1dp"
+                android:padding="@dimen/margin_semi_large"
+                android:src="@drawable/ic_bin"
+                app:tint="@color/black"
+                tools:visibility="visible" />
+        </com.google.android.material.card.MaterialCardView>
+
+        <View
+            android:id="@+id/vRecording"
+            android:layout_width="18dp"
+            android:layout_height="18dp"
+            android:layout_marginStart="@dimen/margin_large"
+            android:background="@drawable/recording"
+            app:layout_constraintBottom_toBottomOf="@id/containerIv"
+            app:layout_constraintStart_toEndOf="@id/containerIv"
+            app:layout_constraintTop_toTopOf="@id/containerIv"
+            tools:text="01:11" />
+
+        <TextView
+            android:id="@+id/tvRecordingCounter"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="@dimen/margin"
+            android:textAppearance="@style/TextAppearance.AppCompat.Medium"
+            app:layout_constraintBottom_toBottomOf="@id/containerIv"
+            app:layout_constraintStart_toEndOf="@id/vRecording"
+            app:layout_constraintTop_toTopOf="@id/containerIv"
+            tools:text="01:11" />
+
+        <androidx.appcompat.widget.AppCompatImageButton
+            android:id="@+id/btSendSpeech"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:background="@drawable/ic_background_send_button"
+            android:elevation="2dp"
+            android:padding="13dp"
+            android:paddingStart="30dp"
+            android:src="@drawable/ic_send"
+            app:layout_constraintBottom_toTopOf="@id/tvOneMillionBot"
+            app:layout_constraintEnd_toEndOf="parent" />
+
+        <androidx.constraintlayout.widget.Group
+            android:id="@+id/groupSpeech"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:visibility="gone"
+            app:constraint_referenced_ids="btSendSpeech,containerIv,vRecording,tvRecordingCounter"
+            tools:visibility="visible" />
+
+        <androidx.constraintlayout.widget.Group
+            android:id="@+id/groupHorizontalButtons"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:visibility="gone"
+            app:constraint_referenced_ids="rvButtons,rvButtonsNext"
+            tools:visibility="visible" />
+
+    </androidx.constraintlayout.widget.ConstraintLayout>
+
+
+</androidx.constraintlayout.widget.ConstraintLayout>

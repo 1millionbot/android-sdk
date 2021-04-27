@@ -1,0 +1,79 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:layout_marginHorizontal="@dimen/margin_large"
+    android:layout_marginBottom="@dimen/margin_large">
+
+    <ScrollView
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_above="@+id/footerContainer"
+        android:layout_alignParentTop="true"
+        android:layout_marginBottom="@dimen/margin_large"
+        android:fillViewport="true">
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:clipToPadding="false"
+            android:gravity="center"
+            android:orientation="vertical"
+            android:paddingTop="@dimen/margin">
+
+            <com.google.android.material.textview.MaterialTextView
+                android:id="@+id/tvLegalTermsExplanation"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:gravity="center"
+                android:textAppearance="@style/TextAppearance.AppCompat.Medium"
+                tools:text="@string/privacy_policy_explanation" />
+        </LinearLayout>
+
+    </ScrollView>
+
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:id="@+id/footerContainer"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_alignParentBottom="true">
+
+        <com.google.android.material.textview.MaterialTextView
+            android:id="@+id/tvLegalTerms"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="@dimen/margin_large"
+            android:layout_marginBottom="@dimen/margin"
+            android:text="@string/privacy_policy"
+            android:textAppearance="@style/TextAppearance.AppCompat.Medium"
+            android:textColor="@color/link"
+            android:textStyle="bold"
+            app:layout_constraintBottom_toTopOf="@id/btAgree"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:textAllCaps="true" />
+
+        <com.google.android.material.button.MaterialButton
+            android:id="@+id/btAgree"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:text="@string/agree"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintEnd_toStartOf="@id/btDisagree"
+            app:layout_constraintStart_toStartOf="parent" />
+
+        <com.google.android.material.button.MaterialButton
+            android:id="@+id/btDisagree"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="@dimen/margin"
+            android:alpha=".65"
+            android:text="@string/disagree"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toEndOf="@id/btAgree" />
+    </androidx.constraintlayout.widget.ConstraintLayout>
+
+</RelativeLayout>

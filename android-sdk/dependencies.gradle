@@ -1,0 +1,59 @@
+ext.config = [
+        buildTools: "30.0.2",
+        minSdk    : 21,
+        compileSdk: 30
+]
+
+ext.versions = [
+        kotlin          : kotlinVersion,
+        constraintLayout: '1.1.3',
+        lifecycle       : '2.2.0',
+        okhttp          : '4.8.0',
+        moshi           : '1.9.2',
+        retrofit        : '2.9.0',
+        glide           : "4.11.0",
+        navigation      : navigationVersion,
+        koin            : '2.1.6'
+]
+
+ext.googleLibs = [
+        appCompat        : "androidx.appcompat:appcompat:1.2.0",
+        design           : "com.google.android.material:material:1.2.1",
+        recyclerView     : "androidx.recyclerview:recyclerview:1.2.0",
+        cardView         : "androidx.cardview:cardview:1.0.0",
+        constraintLayout : "androidx.constraintlayout:constraintlayout:$versions.constraintLayout",
+        viewModel        : "androidx.lifecycle:lifecycle-viewmodel-ktx:$versions.lifecycle",
+        liveData         : "androidx.lifecycle:lifecycle-livedata-ktx:$versions.lifecycle",
+        ktxCore          : "androidx.core:core-ktx:1.3.0",
+        ktxFragment      : "androidx.fragment:fragment-ktx:1.2.4",
+        navigation       : "androidx.navigation:navigation-fragment-ktx:$versions.navigation",
+        navigationUi     : "androidx.navigation:navigation-ui-ktx:$versions.navigation",
+        datastore        : "androidx.datastore:datastore-preferences:1.0.0-alpha06",
+        coordinatorlayout: 'androidx.coordinatorlayout:coordinatorlayout:1.1.0'
+]
+
+ext.libs = [
+        kotlin           : "org.jetbrains.kotlin:kotlin-stdlib-jdk8:$versions.kotlin",
+        moshi            : "com.squareup.moshi:moshi:$versions.moshi",
+        moshiCodegen     : "com.squareup.moshi:moshi-kotlin-codegen:$versions.moshi",
+        moshiAdapters    : "com.squareup.moshi:moshi-adapters:$versions.moshi",
+        retrofit         : "com.squareup.retrofit2:retrofit:$versions.retrofit",
+        retrofitMoshi    : "com.squareup.retrofit2:converter-moshi:$versions.retrofit",
+        glide            : "com.github.bumptech.glide:glide:$versions.glide",
+        glideCompiler    : "com.github.bumptech.glide:compiler:$versions.glide",
+        koinCore         : "org.koin:koin-core:$versions.koin",
+        koinAndroid      : "org.koin:koin-android:$versions.koin",
+        koinScope        : "org.koin:koin-androidx-scope:$versions.koin",
+        koinViewModel    : "org.koin:koin-androidx-viewmodel:$versions.koin",
+        dialogs          : 'com.afollestad.material-dialogs:core:3.3.0',
+        imageviewer      : 'com.github.stfalcon:stfalcon-imageviewer:1.0.1',
+        ioClient         : 'io.socket:socket.io-client:1.0.1'
+]
+
+ext.setup_koin = this.&setup_koin
+
+def setup_koin(targetProject) {
+    targetProject.dependencies.implementation(libs.koinCore)
+    targetProject.dependencies.implementation(libs.koinAndroid)
+    targetProject.dependencies.implementation(libs.koinViewModel)
+}

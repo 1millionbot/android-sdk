@@ -1,0 +1,12 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <dimen name="margin">5dp</dimen>
+    <dimen name="margin_semi_large">10dp</dimen>
+    <dimen name="margin_large">15dp</dimen>
+    <dimen name="padding_text_bubble_initial_view">20dp</dimen>
+    <dimen name="margin_extra_large">30dp</dimen>
+    <dimen name="margin_bubble">60dp</dimen>
+    <dimen name="margin_bubble_large">100dp</dimen>
+    <dimen name="corner_size_message">15dp</dimen>
+    <dimen name="corner_size_message_inner">10dp</dimen>
+</resources>

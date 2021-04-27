@@ -1,0 +1,21 @@
+<resources>
+    <string name="app_name" translatable="false">1MillionBot</string>
+    <string name="url_one_million_bot" translatable="false">https://1millionbot.com/</string>
+    <string name="by_one_million_bot" translatable="false">By 1millionbot</string>
+    <string name="forget_me_warning">¿Está seguro de que desea olvidar sus datos?</string>
+
+    <string name="privacy_policy">Política de privacidad</string>
+    <string name="privacy_policy_explanation">Guardar la conversación me sirve para ir mejorando día a día, añadir nuevas funcionalidades y resolver rapidamente tus dudas. ¿Estás de acuerdo?</string>
+    <string name="legal_terms_url">https://1millionbot.com/en/</string>
+    <string name="chat" translatable="false">Chat</string>
+    <string name="select_language">Seleccionar idioma</string>
+    <string name="clear_data">Olvidar mis datos</string>
+    <string name="ask_question">Escribe tu pregunta</string>
+    <string name="agree">Aceptar</string>
+    <string name="disagree">Rechazar</string>
+    <string name="cancel">Cancelar</string>
+    <string name="retry">Reintentar</string>
+    <string name="writing">Escribiendo...</string>
+    <string name="empty_message_error">No se puede enviar un mensaje vacío</string>
+    <string name="generic_error">Se ha producido un error, por favor inténtelo de nuevo más tarde.</string>
+</resources>

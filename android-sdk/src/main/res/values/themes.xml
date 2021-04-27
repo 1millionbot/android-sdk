@@ -1,0 +1,81 @@
+<resources xmlns:tools="http://schemas.android.com/tools">
+    <!-- Base application theme. -->
+    <style name="Theme.OneMillionBot" parent="Theme.MaterialComponents.DayNight.NoActionBar.Bridge">
+        <!-- Primary brand color. -->
+        <item name="colorPrimary">@color/purple_500</item>
+        <item name="colorPrimaryVariant">@color/purple_700</item>
+        <item name="colorOnPrimary">@color/white</item>
+        <!-- Secondary brand color. -->
+        <item name="colorSecondary">@color/teal_200</item>
+        <item name="colorSecondaryVariant">@color/teal_700</item>
+        <item name="colorOnSecondary">@color/black</item>
+        <!-- Status bar color. -->
+        <item name="android:statusBarColor" tools:targetApi="l">@color/black</item>
+        <!-- Customize your theme here. -->
+        <item name="android:windowActionBar">false</item>
+        <item name="android:windowNoTitle">true</item>
+    </style>
+
+    <style name="Toolbar" parent="Widget.AppCompat.Toolbar">
+        <item name="android:background">@color/white</item>
+        <item name="android:elevation">4dp</item>
+        <item name="android:theme">@style/ThemeOverlay.AppCompat.ActionBar</item>
+        <item name="android:popupTheme">@style/ThemeOverlay.AppCompat.Light</item>
+    </style>
+
+    <style name="initial_message_bot" parent="">
+        <item name="cornerFamily">rounded</item>
+        <item name="cornerSizeTopLeft">30dp</item>
+        <item name="cornerSizeTopRight">30dp</item>
+        <item name="cornerSizeBottomRight">0dp</item>
+        <item name="cornerSizeBottomLeft">30dp</item>
+    </style>
+
+    <style name="initial_message_left" parent="">
+        <item name="cornerFamily">rounded</item>
+        <item name="cornerSizeTopLeft">0dp</item>
+        <item name="cornerSizeTopRight">@dimen/corner_size_message</item>
+        <item name="cornerSizeBottomRight">@dimen/corner_size_message</item>
+        <item name="cornerSizeBottomLeft">@dimen/corner_size_message</item>
+    </style>
+
+    <style name="initial_message_right" parent="">
+        <item name="cornerFamily">rounded</item>
+        <item name="cornerSizeTopLeft">@dimen/corner_size_message</item>
+        <item name="cornerSizeTopRight">0dp</item>
+        <item name="cornerSizeBottomRight">@dimen/corner_size_message</item>
+        <item name="cornerSizeBottomLeft">@dimen/corner_size_message</item>
+    </style>
+
+    <style name="message" parent="">
+        <item name="cornerFamily">rounded</item>
+        <item name="cornerSizeTopLeft">@dimen/corner_size_message</item>
+        <item name="cornerSizeTopRight">@dimen/corner_size_message</item>
+        <item name="cornerSizeBottomRight">@dimen/corner_size_message</item>
+        <item name="cornerSizeBottomLeft">@dimen/corner_size_message</item>
+    </style>
+
+    <style name="message_inner" parent="">
+        <item name="cornerFamily">rounded</item>
+        <item name="cornerSizeTopLeft">@dimen/corner_size_message_inner</item>
+        <item name="cornerSizeTopRight">@dimen/corner_size_message_inner</item>
+        <item name="cornerSizeBottomRight">@dimen/corner_size_message_inner</item>
+        <item name="cornerSizeBottomLeft">@dimen/corner_size_message_inner</item>
+    </style>
+
+    <style name="image" parent="">
+        <item name="cornerFamily">rounded</item>
+        <item name="cornerSizeTopLeft">@dimen/corner_size_message</item>
+        <item name="cornerSizeTopRight">@dimen/corner_size_message</item>
+        <item name="cornerSizeBottomRight">0dp</item>
+        <item name="cornerSizeBottomLeft">0dp</item>
+    </style>
+
+    <style name="image_more_cards" parent="">
+        <item name="cornerFamily">rounded</item>
+        <item name="cornerSizeTopLeft">30dp</item>
+        <item name="cornerSizeTopRight">30dp</item>
+        <item name="cornerSizeBottomRight">30dp</item>
+        <item name="cornerSizeBottomLeft">30dp</item>
+    </style>
+</resources>
