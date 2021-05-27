@@ -14,7 +14,7 @@ allprojects {
 Add to app module gradle.build file
 ```
 dependencies {
-    implementation 'com.github.1millionbot:android-sdk:0.0.4'
+    implementation 'com.github.1millionbot:android-sdk:0.0.5'
 }
 ```
 
